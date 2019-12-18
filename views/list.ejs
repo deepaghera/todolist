@@ -9,7 +9,19 @@
     </head>
 
     <body>
-       <h1><%= kindOfDay %></h1>
+        <h1><%= kindOfDay %></h1>
+        <ul>
+            <% newItems.forEach(itemin => { %>
+            <li><%= itemin %></li>
+
+            <% }); %>
+          
+        </ul>
+        <form action="/" method="post">
+        <input type="text" name="newitem">
+        <button type="submit">Add</button>
+        </form>
+
     </body>
 
 </html>
