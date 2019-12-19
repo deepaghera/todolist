@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const date  = require(__dirname + '/date.js');
+const date = require(__dirname + '/date.js');
 
-console.log(date);
+
 
 const app = express();
 
@@ -15,14 +15,14 @@ app.use(bodyParser.urlencoded({
 let Items = ["Buy food", "Cook Food", "Eat Food"];
 let Workitem = [];
 app.get('/', (req, res) => {
-
+    let day = date.getDate();
     res.render("list", {
         listTitle: day,
         newItems: Items,
     });
 });
 app.post('/', (req, res) => {
-    console.log(req.body);
+   
     Item = req.body.newitem;
     if (req.body.list === 'Work') {
 
